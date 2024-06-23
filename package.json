@@ -19,6 +19,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-tsparticles": "^2.12.2",
     "react-typed": "^2.0.12",
+    "react-ui-cards": "^2.0.0",
     "tsparticles": "^3.4.0",
     "tsparticles-slim": "^2.12.0"
   },

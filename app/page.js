@@ -3,6 +3,7 @@ import Landingsection from './Components/Landingsection';
 import Selfbout from './Components/Selfbout';
 import MyCarousel from './Components/MyCarousel'; 
 import ContactForm from './Components/ContactForm';
+import SemestersPage from './Components/SemestersPage';
 
 const Page = () => {
   return (
