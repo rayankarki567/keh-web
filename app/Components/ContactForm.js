@@ -27,11 +27,9 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        // Reset form fields on successful submission
         setFormData({ name: '', email: '', subject: '', message: '' });
         alert('Message sent successfully!');
       } else {
-        // Handle error scenarios
         alert('Failed to send message. Please try again later.');
       }
     } catch (error) {
