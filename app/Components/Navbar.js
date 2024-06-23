@@ -16,7 +16,6 @@ const Navbar = () => {
           <Link href="/">
             <button className="btn-nav rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">Drawings</button>
           </Link>
-          {/* border-white-50 border-2 */}
           <Link href="/">
             <button className="btn-nav rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">SXC</button>
           </Link>

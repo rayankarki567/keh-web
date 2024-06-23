@@ -15,7 +15,8 @@ const carouselItems = [
     description: "\"You're having lewd thoughts, aren't you?\" - Mai Sakurajima",
     link: "./project.html"
   },
-  // Add more items here
+
+  
 ];
 
 const MyCarousel = () => {

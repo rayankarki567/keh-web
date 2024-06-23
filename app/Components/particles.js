@@ -21,7 +21,7 @@ const ParticlesBackground = () => {
     () => ({
       background: {
         color: {
-          value: '', // Set to empty string for transparent background
+          value: '', //for transparent background
         },
       },
       fpsLimit: 120,
@@ -99,7 +99,7 @@ const ParticlesBackground = () => {
     );
   }
 
-  return null; // or loading indicator if desired
+  return null;
 };
 
 export default ParticlesBackground;

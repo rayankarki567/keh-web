@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import TypedText from './TypedText';
-import ParticlesBackground from './particles'; // Adjust import path as per your file structure
+import ParticlesBackground from './particles'; 
 
 const Landingsection = () => {
   return (
