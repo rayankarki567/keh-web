@@ -5,7 +5,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 const SelfAbout = () => {
     const socialLinks = [
         { href: 'https://www.facebook.com/yan.reh55/', icon: FaFacebook },
-        { href: 'https://www.instagram.com/yan.reh55/', icon: FaInstagram },
+        { href: 'https://www.instagram.com/mr_keh9/', icon: FaInstagram },
         { href: 'https://www.github.com/rayankarki567', icon: FaGithub},
       ];
   return (
@@ -30,7 +30,7 @@ const SelfAbout = () => {
 
         <div className='text-gray-600 items-start justify-center text-center w-1/2 mt-28'>
           <div className='mt-4 ml-8'>Student at St. Xavier's College, Maitighar, Kathmandu</div>
-          <div>Amet aute dolore minim duis magna mollit quis ex nulla qui eiusmod do nulla. Magna veniam cupidatat fugiat aliqua occaecat adipisicing duis enim pariatur ea. Adipisicing do ad eu proident. Pariatur excepteur voluptate deserunt adipisicing. Ad officia fugiat deserunt elit ut ea amet deserunt magna. Proident non cillum cillum pariatur tempor cillum ex.</div>
+          <div>Amet aute dolore minim duis magna mollit quis ex nulla qui eiusmod do nulla. Pariatur excepteur voluptate deserunt adipisicing. Ad officia fugiat deserunt elit ut ea amet deserunt magna. Proident non cillum cillum pariatur tempor cillum ex.</div>
         </div>
       </div>
     </div>

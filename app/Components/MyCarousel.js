@@ -7,13 +7,13 @@ const carouselItems = [
     image: "/images/imge.jpeg",
     title: "Steins Gate",
     description: "“People’s feelings are memories that transcend time.\" - Makise Kurisu",
-    link: "./project.html"
+    link: "/app/Drawings"
   },
   {
     image: "/images/imge-7.jpg",
     title: "Bunny Girl Senpai",
     description: "\"You're having lewd thoughts, aren't you?\" - Mai Sakurajima",
-    link: "./project.html"
+    link: "/app/Drawings"
   },
 
   
