@@ -14,7 +14,7 @@ const SelfAbout = () => {
       <div className='text-lg text-center text-gray-400 m-2 font-light'>Just a Lazy Enthusiast!</div>
       
       <div className='flex justify-center mt-8'>
-      <div className='flex flex-col items-center mr-8 w-1/2'>
+      <div className='flex flex-col items-center w-1/2'>
           <Image src="/images/profile.png" alt="Rayan Karki" width={380} height={380} />
           <div className='text-dblue text-2xl font-bold'>Rayan Karki</div>
           <div className='text-md text-gray-600'>BSc.CSIT</div>
@@ -29,7 +29,7 @@ const SelfAbout = () => {
         </div>
 
         <div className='text-gray-600 items-start justify-center text-center w-1/2 mt-28'>
-          <div className='mt-4 ml-8'>Student at St. Xavier's College, Maitighar, Kathmandu</div>
+          <div className='mt-4'>Student at St. Xavier's College, Maitighar, Kathmandu</div>
           <div>Amet aute dolore minim duis magna mollit quis ex nulla qui eiusmod do nulla. Pariatur excepteur voluptate deserunt adipisicing. Ad officia fugiat deserunt elit ut ea amet deserunt magna. Proident non cillum cillum pariatur tempor cillum ex.</div>
         </div>
       </div>

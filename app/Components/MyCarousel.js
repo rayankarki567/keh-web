@@ -4,17 +4,20 @@ import Image from 'next/image';
 
 const carouselItems = [
   {
-    image: "/images/imge.jpeg",
+    image: "/images/imge.jpg",
     title: "Steins Gate",
     description: "“People’s feelings are memories that transcend time.\" - Makise Kurisu",
-    link: "/app/Drawings"
   },
   {
     image: "/images/imge-7.jpg",
     title: "Bunny Girl Senpai",
     description: "\"You're having lewd thoughts, aren't you?\" - Mai Sakurajima",
-    link: "/app/Drawings"
   },
+  {
+    image: "/images/imge-10.jpg",
+    title: "Demon Slayer",
+    description: "\"Moshi Moshi, Daijobu desuka?\" - Shinobu Kocho",
+  }, 
 
   
 ];
@@ -85,7 +88,7 @@ const MyCarousel = () => {
         </div>
         <p className="mt-4">{carouselItems[currentSlide].description}</p>
         <div className='flex items-center justify-center'>
-          <a href={carouselItems[currentSlide].link} className="inline-block m-2 font-semibold border-2 text-blue-600 border-blue-500 rounded-lg p-2 transition-transform duration-300 ease-in-out hover:scale-110 hover:bg-gray-100">Discover More</a>
+          <a href='/app/Drawings' className="inline-block m-2 font-semibold border-2 text-blue-600 border-blue-500 rounded-lg p-2 transition-transform duration-300 ease-in-out hover:scale-110 hover:bg-gray-100">Discover More</a>
         </div>
       </div>
     </div>
