@@ -11,6 +11,9 @@ module.exports = {
       colors: {
         dblue: '#00006b'
       },
+      height: {
+        '138': '32rem',
+      },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
         serif: ['Martel', ...defaultTheme.fontFamily.serif], 

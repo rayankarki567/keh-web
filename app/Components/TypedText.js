@@ -5,8 +5,8 @@ const TypedText = () => {
   return (
       <ReactTyped
         strings={['I am Rayan Karki.', "'Sup."]}
-        typeSpeed={60}
-        backSpeed={30}
+        typeSpeed={120}
+        backSpeed={80}
         loop
       />
   );
