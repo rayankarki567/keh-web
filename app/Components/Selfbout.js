@@ -21,16 +21,16 @@ const SelfAbout = () => {
 
           <div className='mt-2 flex space-x-4'>
             {socialLinks.map((link, index) => (
-              <a key={index} href={link.href} className='hover:bg-gray-200 rounded-md py-1' target='_blank'>
+              <a key={index} href={link.href} className='hover:bg-gray-200 rounded-md p-0.5' target='_blank'>
                 <link.icon size='1em' style={{ color: '#9ca3af' }} />
               </a>
             ))}
           </div>
         </div>
 
-        <div className='text-gray-600 items-start justify-center text-center w-1/2 mt-28'>
-          <div className='mt-4'>Student at St. Xavier's College, Maitighar, Kathmandu</div>
-          <div>Amet aute dolore minim duis magna mollit quis ex nulla qui eiusmod do nulla. Pariatur excepteur voluptate deserunt adipisicing. Ad officia fugiat deserunt elit ut ea amet deserunt magna. Proident non cillum cillum pariatur tempor cillum ex.</div>
+        <div className='text-gray-600 items-start justify-center text-justify w-1/2 mt-28'>
+          <div className='my-4 font-semibold'>Student at St. Xavier's College, Maitighar, Kathmandu</div>
+          <div>Amet aute dolore minim duis magna mollit quis ex nulla qui eiusmod do nulla. <br/>Pariatur excepteur voluptate deserunt adipisicing.<br /> Ad officia fugiat deserunt elit ut proident non cillum cillum pariatur tempor cillum ex.</div>
         </div>
       </div>
     </div>
