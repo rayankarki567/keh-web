@@ -18,11 +18,11 @@ const FlippingCardBack = dynamic(() =>
 
 const SemestersPage = () => {
   const semesters = [
-    { title: "Sem 1", link: "https://drive.google.com/drive/folders/1Q9LCbUV7p20-J9Twfrzns4BQjBNiCfru?usp=sharing" },
-    { title: "Sem 2", link: "https://drive.google.com/drive/folders/1BWvYov5kJ2Jg6tuz3z5LEC9MC6CblGtN?usp=sharing" },
-    { title: "Sem 3", link: "https://drive.google.com/drive/folders/1Jg9Amrzld7tXg4vd5Z9PAvULetCBUSPU?usp=sharing" },
-    { title: "Sem 4", link: "https://drive.google.com/drive/folders/1iE9Mrf-jO3VTxNTPAWvUhcYp726RA9lW?usp=sharing" },
-    { title: "Sem 5", link: "https://drive.google.com/link5" },
+    { title: "I", link: "https://drive.google.com/drive/folders/1Q9LCbUV7p20-J9Twfrzns4BQjBNiCfru?usp=sharing" },
+    { title: "II", link: "https://drive.google.com/drive/folders/1BWvYov5kJ2Jg6tuz3z5LEC9MC6CblGtN?usp=sharing" },
+    { title: "III", link: "https://drive.google.com/drive/folders/1Jg9Amrzld7tXg4vd5Z9PAvULetCBUSPU?usp=sharing" },
+    { title: "IV", link: "https://drive.google.com/drive/folders/1iE9Mrf-jO3VTxNTPAWvUhcYp726RA9lW?usp=sharing" },
+    { title: "V", link: "https://drive.google.com/link5" },
   ];
 
   const [isClient, setIsClient] = useState(false);
@@ -43,7 +43,7 @@ const SemestersPage = () => {
             <FlippingCard key={index} className="h-60">
               <FlippingCardFront>
                 <div className="bg-gradient-to-b from-blue-200 to-white p-8 h-60 w-60 flex flex-col justify-center items-center rounded">
-                  <div className="text-2xl font-extrabold text-dblue ">{semester.title}</div>
+                  <div className="text-4xl font-extrabold font-serif text-dblue ">{semester.title}</div>
                 </div>
               </FlippingCardFront>
               <FlippingCardBack>
