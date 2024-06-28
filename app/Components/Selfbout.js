@@ -14,7 +14,7 @@ const SelfAbout = () => {
       <div className='text-lg text-center text-gray-400 m-2 font-light'>Just a Lazy Enthusiast!</div>
       
       <div className='flex justify-center mt-8'>
-      <div className='flex flex-col items-center w-1/2'>
+      <div className='flex flex-col items-center w-1/2 z-50'>
           <Image src="/images/profile.png" alt="Rayan Karki" width={380} height={380} />
           <div className='text-dblue text-2xl font-bold'>Rayan Karki</div>
           <div className='text-md text-gray-600'>BSc.CSIT</div>

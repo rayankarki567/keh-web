@@ -11,13 +11,13 @@ const Navbar = () => {
         </Link>
         <div className="flex space-x-4">
           <Link href="/">
-            <button className="btn-nav rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">Home</button>
+            <button className="rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">Home</button>
           </Link>
           <Link href="../Drawings">
-            <button className="btn-nav rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">Drawings</button>
+            <button className="rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">Drawings</button>
           </Link>
           <Link href="../SXC">
-            <button className="btn-nav rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">SXC</button>
+            <button className="rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">SXC</button>
           </Link>
         </div>
       </nav>

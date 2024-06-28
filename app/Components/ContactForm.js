@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '', // Add name field to formData
+    name: '', 
     email: '',
     subject: '',
     message: ''
@@ -40,7 +40,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className='text-3xl font-serif h2after text-center mt-32 font-extrabold text-dblue'>Get in touch</div> 
+      <div className='text-3xl font-serif h2after text-center mt-32 font-extrabold text-dblue z-50'>Get in touch</div> 
       <div className="mt-8 max-w-lg mx-auto p-8 bg-white rounded-lg shadow-xl hover:shadow-2xl">
         <form onSubmit={handleSubmit} action="https://formspree.io/f/mnnaadog" method="POST">
           <div className="mb-4">

@@ -9,17 +9,16 @@ const carouselItems = [
     description: "“People’s feelings are memories that transcend time.\" - Makise Kurisu",
   },
   {
-    image: "/images/imge-7.jpg",
-    title: "Bunny Girl Senpai",
-    description: "\"You're having lewd thoughts, aren't you?\" - Mai Sakurajima",
-  },
-  {
     image: "/images/imge-10.jpg",
     title: "Demon Slayer",
-    description: "\"Moshi Moshi, Daijobu desuka?\" - Shinobu Kocho",
+    description: "\"Though I may not excel in conventional ways, I've found my own path with unique value.\" - Shinobu Kocho",
   }, 
+  {
+    image: "/images/imgee.jpg",
+    title: "Chainsaw Man",
+    description: "\"Death. War. Hunger. There are many things in this world that humanity would be happier without.\" - Makima",
+  },
 
-  
 ];
 
 const MyCarousel = () => {
