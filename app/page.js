@@ -2,7 +2,7 @@ import React from 'react';
 import Landingsection from './Components/Landingsection';
 import Selfbout from './Components/Selfbout';
 import MyCarousel from './Components/MyCarousel'; 
-import ContactForm from './Components/contactform';
+import ContactForm from './Components/ContactForm';
 import Footer from './Components/Footer';
 
 const Page = () => {
