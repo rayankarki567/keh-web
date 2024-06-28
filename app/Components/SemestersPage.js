@@ -36,26 +36,29 @@ const SemestersPage = () => {
   }
 
   return (
-    <section className="min-h-screen p-12">
-      <div className="container mx-auto flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-8">
-          {semesters.map((semester, index) => (
-            <FlippingCard key={index} className="h-60">
-              <FlippingCardFront>
-                <div className="bg-gradient-to-b from-blue-200 to-white p-8 h-60 w-60 flex flex-col justify-center items-center rounded">
-                  <div className="text-4xl font-extrabold font-serif text-dblue ">{semester.title}</div>
-                </div>
-              </FlippingCardFront>
-              <FlippingCardBack>
-                <div className="bg-gradient-to-b from-blue-200 to-gray-50 p-4 h-64 w-60 flex flex-col justify-center items-center shadow-xl rounded">
-                  <a href={semester.link} target='_blank' className="bg-gradient-to-b from-blue-500 to-blue-200 text-white text-lg font-semibold rounded-xl px-6 py-4 transition-transform duration-300 ease-in-out hover:scale-110">Drive Link</a>
-                </div>
-              </FlippingCardBack>
-            </FlippingCard>
-          ))}
+    <div>
+      <section className="min-h-screen p-12">
+        <div className="container mx-auto flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-8">
+            {semesters.map((semester, index) => (
+              <FlippingCard key={index} className="h-60">
+                <FlippingCardFront>
+                  <div className="bg-gradient-to-b from-blue-200 to-white p-8 h-60 w-60 flex flex-col justify-center items-center rounded">
+                    <div className="text-4xl font-extrabold font-serif text-dblue ">{semester.title}</div>
+                  </div>
+                </FlippingCardFront>
+                <FlippingCardBack>
+                  <div className="bg-gradient-to-b from-blue-200 to-gray-50 p-4 h-64 w-60 flex flex-col justify-center items-center shadow-xl rounded">
+                    <a href={semester.link} target='_blank' className="bg-gradient-to-b from-blue-500 to-blue-200 text-white text-lg font-semibold rounded-xl px-6 py-4 transition-transform duration-300 ease-in-out hover:scale-110">Drive Link</a>
+                  </div>
+                </FlippingCardBack>
+              </FlippingCard>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <p className='px-12 py-1 text-dblue text-center'>Use your college email for access & <a href='https://www.csit21.cf/' target='_blank' className='underline font-semibold'>Here</a> for more files </p>
+    </div>
   );
 };
 
