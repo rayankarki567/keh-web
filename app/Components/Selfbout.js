@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const SelfAbout = () => {
     const socialLinks = [
-        { href: 'https://www.facebook.com/yan.reh55/', icon: FaFacebook },
+        { href: 'https://www.facebook.com/rayankarki123/', icon: FaFacebook },
         { href: 'https://www.instagram.com/mr_keh9/', icon: FaInstagram },
         { href: 'https://www.github.com/rayankarki567', icon: FaGithub},
       ];
