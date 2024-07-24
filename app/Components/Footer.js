@@ -13,8 +13,12 @@ const Footer = () => {
     <footer className="mt-32 relative bg-cover bg-center bg-no-repeat py-16" style={{ backgroundImage: 'url(/images/wave-footer.svg)'}}>
       <div className="container px-16 flex justify-between items-center text-white text-center">
         <div className="flex items-center space-x-4">
-          <Image src="/logo.png" alt="Logo" width={60} height={60} />
-          <div className="sm:text-xl font-serif md:text-3xl font-black">Keh!</div>
+          <Image src="/logo.png" alt="Rayan Karki's Logo" width={60} height={60} />
+          <div className="flex flex-col items-center sm:text-xl font-serif md:text-3xl font-black">
+              <div>Keh!</div>
+              <div className='sm:text-sm md:text-md font-normal font-sans'>Rayan Karki</div>
+          </div>
+
         </div>
         <div className="flex space-x-6">
         <div className='mt-2 flex space-x-4'>
