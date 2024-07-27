@@ -7,6 +7,7 @@ const SelfAbout = () => {
         { href: 'https://www.facebook.com/rayankarki123/', icon: FaFacebook },
         { href: 'https://www.instagram.com/mr_keh9/', icon: FaInstagram },
         { href: 'https://www.github.com/rayankarki567', icon: FaGithub},
+        { href: 'https://www.linkedin.com/in/rayankarki567/', icon: FaLinkedin},
       ];
   return (
     <div className='container mx-auto mt-48'>

@@ -7,7 +7,7 @@ const Navbar = () => {
     <header className="bg-dblue text-white">
       <nav className="container mx-auto px-10 py-3 flex justify-between items-center">
         <Link href="/">
-            <Image src="/logo.png" alt="Keh's Website!" width={32} height={32} />
+            <Image src="/logo.png" alt="Keh's Website!" width={40} height={40} />
         </Link>
         <div className="flex space-x-4">
           <Link href="/">
