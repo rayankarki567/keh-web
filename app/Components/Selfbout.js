@@ -29,7 +29,7 @@ const SelfAbout = () => {
         </div>
 
         <div className='text-gray-600 items-start justify-center text-justify w-1/2 mt-28'>
-          <div className='my-4 font-semibold'>Student at St. Xavier's College, Maitighar, Kathmandu</div>
+          <div className='my-4 font-semibold'>Hello! I'm Rayan Karki. A Student at St. Xavier's College, Maitighar, Kathmandu</div>
           <div>Amet aute dolore minim duis magna mollit quis ex nulla qui eiusmod do nulla. <br/>Pariatur excepteur voluptate deserunt adipisicing.<br /> Ad officia fugiat deserunt elit ut proident non cillum cillum pariatur tempor cillum ex.</div>
         </div>
       </div>
