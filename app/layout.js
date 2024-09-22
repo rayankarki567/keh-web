@@ -9,6 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:image" content="/ss_landing.png" />
+      </head>
       <body>
         <Navbar />
         {children}
