@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 const ContactForm = () => {
@@ -10,23 +10,32 @@ const ContactForm = () => {
     message: ''
   });
 
-  const [recaptchaToken, setRecaptchaToken] = useState(null);
+  // const [recaptchaToken, setRecaptchaToken] = useState(null);
+  const [turnstileToken, setTurnstileToken] = useState(null); 
+  const turnstileRef = useRef(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleRecaptchaChange = (token) => {
-    setRecaptchaToken(token);
+  // const handleRecaptchaChange = (token) => {
+  //   setRecaptchaToken(token);
+  // };
+  const handleTurnstileChange = (token) => { 
+    setTurnstileToken(token); 
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if(!recaptchaToken){
-      alert('Please complete reCAPTCHA first');
-      return;
+    // if(!recaptchaToken){
+    //   alert('Please complete reCAPTCHA first');
+    //   return;
+    // }
+    if (!turnstileToken) { 
+      alert('Please complete the Turnstile verification first'); 
+      return; 
     }
 
     try {
@@ -35,12 +44,14 @@ const ContactForm = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ ...formData, 'g-recaptcha-response': recaptchaToken })
+        // body: JSON.stringify({ ...formData, 'g-recaptcha-response': recaptchaToken })
+        body: JSON.stringify({ ...formData, 'cf-turnstile-response': turnstileToken })
       });
 
       if (response.ok) {
         setFormData({ name: '', email: '', subject: '', message: '' });
-        setRecaptchaToken(null);
+        // setRecaptchaToken(null);
+        setTurnstileToken(null);
         alert('Message sent successfully!');
       } else {
         alert('Failed to send message. Please try again later.');
@@ -51,11 +62,31 @@ const ContactForm = () => {
     }
   };
 
+  useEffect(() => { 
+    const script = document.createElement('script'); 
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'; 
+    script.async = true; 
+    script.defer = true; 
+    document.body.appendChild(script); 
+    script.onload = () => { 
+      if (window.turnstile) { 
+        window.turnstile.render(turnstileRef.current, { 
+          sitekey: '0x4AAAAAAA36TwiVQUjPqTjt',
+          callback: handleTurnstileChange, }); 
+      } 
+    }; 
+    return () => {
+      if(script){
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <>
     <div className='text-3xl font-serif h2after text-center mt-32 font-extrabold text-dblue z-50'>Get in touch</div>
-    <div className="mt-8 max-w-lg mx-auto p-8 bg-white rounded-lg shadow-xl hover:shadow-2xl">
-      <form onSubmit={handleSubmit}>
+    <div className="mt-8 max-w-lg mx-auto p-8 bg-white rounded-lg shadow-xl hover:shadow-2xl z-10">
+      <form className='z-50' onSubmit={handleSubmit}>
         <div className="mb-4">
           <input
             type="text"
@@ -101,10 +132,12 @@ const ContactForm = () => {
           ></textarea>
         </div>
         <div className="mb-4">
-          <ReCAPTCHA className='flex justify-center items-center'
+          <div ref={turnstileRef} className="cf-turnstile items-center text-center">
+          </div>
+          {/* <ReCAPTCHA className='flex justify-center items-center'
             sitekey="6LcUdQYqAAAAALpdVvlYZN9gr41QutTrjCbLb0H9"
             onChange={handleRecaptchaChange}
-          />
+          /> */}
         </div>
         <div className='text-center items-center'>
           <button type="submit" className="inline-block m-2 border-2 font-semibold text-blue-600 border-blue-500 rounded-lg p-2 transition-transform duration-300 ease-in-out hover:scale-110 hover:bg-gray-100">Send message</button>

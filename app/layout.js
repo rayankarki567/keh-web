@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar";
 
 export const metadata = {
   title: "Keh Website!",
-  description: "Welcome to Keh Website. It's just sthg like a portfolio (By Rayan Karki)",
+  description: "Welcome to Keh Website. It's just a simple portfolio (By Rayan Karki)",
 };
 
 export default function RootLayout({ children }) {
@@ -11,6 +11,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta property="og:image" content="/ss_landing.png" />
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content="portfolio, Mr Keh, Keh website, Keh, Rayan Karki, Rayan, Karki, Rayan portfolio, Rayan Karki website, creative portfolio" />
+        <meta name="author" content="Rayan Karki" /> 
+        <meta property="og:title" content={metadata.title} /> 
+        <meta property="og:description" content={metadata.description} />
       </head>
       <body>
         <Navbar />

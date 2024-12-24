@@ -7,7 +7,7 @@ import ParticlesBackground from './particles';
 const Landingsection = () => {
   return (
     <section className="relative h-[80vh] overflow-hidden flex items-center justify-center text-white">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/background.svg)'}}> 
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-5" style={{ backgroundImage: 'url(/images/background.svg)'}}> 
         <ParticlesBackground /> 
       </div>
 

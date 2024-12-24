@@ -54,7 +54,7 @@ const ParticlesBackground = () => {
           color: '#ffffff',
           distance: 150,
           enable: true,
-          opacity: 0.5,
+          opacity: 0.6,
           width: 1,
         },
         move: {
@@ -64,7 +64,7 @@ const ParticlesBackground = () => {
             default: 'bounce',
           },
           random: false,
-          speed: 6,
+          speed: 3.5,
           straight: false,
         },
         number: {

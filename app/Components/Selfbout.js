@@ -10,7 +10,7 @@ const SelfAbout = () => {
         { href: 'https://www.linkedin.com/in/rayankarki567/', icon: FaLinkedin},
       ];
   return (
-    <div className='container mx-auto mt-48'>
+    <div className='container mx-auto mt-48 z-10'>
       <div className='text-3xl font-serif h2after text-center mt-32 font-extrabold text-dblue'>About Me</div> 
       <div className='text-lg text-center text-gray-400 m-2 font-light'>Just a Lazy Enthusiast!</div>
       
