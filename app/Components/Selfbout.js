@@ -29,9 +29,11 @@ const SelfAbout = () => {
           </div>
         </div>
 
-        <div className='text-gray-600 items-start justify-center text-justify w-1/2 mt-28'>
-          <div className='my-4 font-semibold'>Hello! I'm Rayan Karki. A Student at St. Xavier's College, Maitighar, Kathmandu</div>
-          <div>Amet aute dolore minim duis magna mollit quis ex nulla qui eiusmod do nulla. <br/>Pariatur excepteur voluptate deserunt adipisicing.<br /> Ad officia fugiat deserunt elit ut proident non cillum cillum pariatur tempor cillum ex.</div>
+        <div className='text-gray-600 items-start justify-center text-left w-1/2 mt-14 pr-12 z-10'>
+          <div className='my-4 font-semibold'>Hello! I'm Rayan Karki, an aspiring tech enthusiast. A Student at St. Xavier's College, Maitighar, Kathmandu</div>
+          <div className='mb-4'>My journey into the world of technology is fueled by curiosity and creativity. From exploring the intricacies of cryptography, network and cyber security to the realm of web, I thrive on turning challenges into opportunities for growth.
+          <br/>Beyond the technical landscape, I have a knack for creative problem-solving and enjoy turning abstract ideas into tangible solutions. When I'm not immersed in tech, you'll find me exploring latest trends, sketching anime character or portraits.<br />I'm passionate about continuous learning and always eager to collaborate, share knowledge, and connect with like-minded individuals. Feel free to reach out for tech discussions, collaboration, or a friendly chat about the wonders of the digital world!
+          </div>
         </div>
       </div>
     </div>

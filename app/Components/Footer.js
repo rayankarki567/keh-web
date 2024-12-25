@@ -8,6 +8,7 @@ const Footer = () => {
         { href: 'https://www.facebook.com/rayankarki123/', icon: FaFacebook },
         { href: 'https://www.instagram.com/mr_keh9/', icon: FaInstagram },
         { href: 'https://www.github.com/rayankarki567', icon: FaGithub},
+        { href: 'https://www.linkedin.com/in/rayankarki567/', icon: FaLinkedin},
       ];
   return (
     <footer className="mt-32 relative bg-cover bg-center bg-no-repeat py-16" style={{ backgroundImage: 'url(/images/wave-footer.svg)'}}>

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useRef, useEffect} from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+// import ReCAPTCHA from 'react-google-recaptcha';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -85,8 +85,8 @@ const ContactForm = () => {
   return (
     <>
     <div className='text-3xl font-serif h2after text-center mt-32 font-extrabold text-dblue z-50'>Get in touch</div>
-    <div className="mt-8 max-w-lg mx-auto p-8 bg-white rounded-lg shadow-xl hover:shadow-2xl z-10">
-      <form className='z-50' onSubmit={handleSubmit}>
+    <div className="mt-8 max-w-lg mx-auto p-8 bg-white rounded-lg shadow-xl hover:shadow-2xl relative z-10">
+      <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <input
             type="text"
