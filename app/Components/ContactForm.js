@@ -39,7 +39,7 @@ const ContactForm = () => {
     }
 
     try {
-      const formspreeurl = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+      const formspreeurl = process.env.FORMSPREE_URL;
       const response = await fetch(formspreeurl, {
         method: 'POST',
         headers: {
@@ -72,7 +72,7 @@ const ContactForm = () => {
     script.onload = () => { 
       if (window.turnstile) { 
         window.turnstile.render(turnstileRef.current, { 
-          sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+          sitekey: process.env.TURNSTILE_SITE_KEY,
           callback: handleTurnstileChange, }); 
       } 
     }; 
