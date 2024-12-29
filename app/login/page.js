@@ -32,6 +32,7 @@ export default function LoginPage() {
         value={email} 
         onChange={(e) => setEmail(e.target.value)} 
         className="mb-2 p-2 border border-gray-300 rounded"
+        required
       />
       <input 
         type="password" 
@@ -39,6 +40,7 @@ export default function LoginPage() {
         value={password} 
         onChange={(e) => setPassword(e.target.value)} 
         className="mb-2 p-2 border border-gray-300 rounded"
+        required
       />
       <button 
         onClick={handleLogin} 
