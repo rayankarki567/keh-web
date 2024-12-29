@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
         <meta name="author" content="Rayan Karki" /> 
         <meta property="og:title" content={metadata.title} /> 
         <meta property="og:description" content={metadata.description} />
+        <meta name="google-site-verification" content="Z7PnaEwYZ_BdYbDI1yEDzxuSjfUpAX3OyLueVztpPvE" />
       </head>
       <body>
         <Navbar />
