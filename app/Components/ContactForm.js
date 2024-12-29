@@ -39,7 +39,8 @@ const ContactForm = () => {
     }
 
     try {
-      const response = await fetch('https://formspree.io/f/mnnaadog', {
+      const formspreeurl = process.env.NEXT_PUBLIC_FORMSPREE_URL;
+      const response = await fetch(formspreeurl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -71,7 +72,7 @@ const ContactForm = () => {
     script.onload = () => { 
       if (window.turnstile) { 
         window.turnstile.render(turnstileRef.current, { 
-          sitekey: '0x4AAAAAAA36TwiVQUjPqTjt',
+          sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
           callback: handleTurnstileChange, }); 
       } 
     }; 
