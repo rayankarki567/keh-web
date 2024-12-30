@@ -1,12 +1,19 @@
+// Turnstile.js
 'use client';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Turnstile = ({ sitekey, theme = 'light', onChange }) => {
   const turnstileRef = useRef(null);
 
   useEffect(() => {
-    const initializeTurnstile = () => {
-      if (turnstileRef.current) {
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+      if (window.turnstile) {
         window.turnstile.render(turnstileRef.current, {
           sitekey,
           theme,
@@ -15,21 +22,9 @@ const Turnstile = ({ sitekey, theme = 'light', onChange }) => {
       }
     };
 
-    // Check if the Turnstile script is already loaded
-    if (!window.turnstile) {
-      const script = document.createElement('script');
-      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-      script.async = true;
-      script.defer = true;
-      script.onload = initializeTurnstile;
-      document.body.appendChild(script);
-    } else {
-      initializeTurnstile();
-    }
-
     return () => {
-      if (window.turnstile && turnstileRef.current) {
-        window.turnstile.reset(turnstileRef.current);
+      if (script) {
+        document.body.removeChild(script);
       }
     };
   }, [sitekey, theme, onChange]);

@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabaseClient';
 import Turnstile from './Turnstile';
 
@@ -89,10 +89,10 @@ const FeedbackForm = () => {
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dblue"
             />
           </div>
-            <div className='mb-4 text-center items-center'>
+          <div className='mb-4 text-center items-center'>
             <Turnstile sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_2ND_KEY} theme="light" onChange={handleTurnstileChange} />
-            </div>
-            <div className='text-center items-center'>
+          </div>
+          <div className='text-center items-center'>
             <button type="submit" className="submit-btn w-4/5 bg-dblue text-white p-2 rounded-md transition-transform duration-300 ease-in-out hover:scale-110" disabled={loading}>
               {loading ? 'Submitting...' : 'Submit Feedback'}
             </button>
