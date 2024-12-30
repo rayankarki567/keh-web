@@ -6,7 +6,7 @@ const Turnstile = ({ sitekey, theme = 'light', onChange }) => {
 
   useEffect(() => {
     const initializeTurnstile = () => {
-      if (turnstileRef.current) {
+      if (turnstileRef.current && window.turnstile) {
         window.turnstile.render(turnstileRef.current, {
           sitekey,
           theme,
@@ -24,6 +24,9 @@ const Turnstile = ({ sitekey, theme = 'light', onChange }) => {
       script.async = true;
       script.defer = true;
       script.onload = initializeTurnstile;
+      script.onerror = () => {
+        console.error('Failed to load Turnstile script');
+      };
       document.body.appendChild(script);
     } else {
       initializeTurnstile();
