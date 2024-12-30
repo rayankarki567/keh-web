@@ -6,7 +6,7 @@ const Turnstile = ({ sitekey, theme = 'light', onChange }) => {
 
   useEffect(() => {
     const initializeTurnstile = () => {
-      if (turnstileRef.current && window.turnstile) {
+      if (turnstileRef.current) {
         window.turnstile.render(turnstileRef.current, {
           sitekey,
           theme,
@@ -15,18 +15,13 @@ const Turnstile = ({ sitekey, theme = 'light', onChange }) => {
       }
     };
 
-    const scriptId = 'turnstile-script';
-
-    if (!document.getElementById(scriptId)) {
+    // Check if the Turnstile script is already loaded
+    if (!window.turnstile) {
       const script = document.createElement('script');
-      script.id = scriptId;
       script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
       script.async = true;
       script.defer = true;
       script.onload = initializeTurnstile;
-      script.onerror = () => {
-        console.error('Failed to load Turnstile script');
-      };
       document.body.appendChild(script);
     } else {
       initializeTurnstile();

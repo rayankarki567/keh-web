@@ -90,7 +90,7 @@ const FeedbackForm = () => {
             />
           </div>
             <div className='mb-4 text-center items-center'>
-            <Turnstile sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} theme="light" onChange={handleTurnstileChange} />
+            <Turnstile sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_2ND_KEY} theme="light" onChange={handleTurnstileChange} />
             </div>
             <div className='text-center items-center'>
             <button type="submit" className="submit-btn w-4/5 bg-dblue text-white p-2 rounded-md transition-transform duration-300 ease-in-out hover:scale-110" disabled={loading}>
