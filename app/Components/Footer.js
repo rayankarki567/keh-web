@@ -12,7 +12,7 @@ const Footer = () => {
       ];
   return (
     <footer className="mt-32 relative bg-cover bg-center bg-no-repeat " style={{ backgroundImage: 'url(/images/wave-footer.svg)'}}>
-      <div className="container p-16 flex justify-between items-center text-white text-center">
+      <div className="container md:w-full p-16 flex justify-between items-center text-white text-center">
         <div className="flex items-center space-x-4">
           <Image src="/logo.png" alt="Keh Website!" width={60} height={60} />
           <div className="flex flex-col items-center sm:text-xl font-serif md:text-3xl font-black">
@@ -31,8 +31,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="container text-right text-blue-950">
-        <p>&copy; 2024 Keh Website. All rights reserved. <a href="pp.html">Privacy Policy</a></p>
+      <div class="container text-right text-sm text-blue-900 p-2">
+        <p>© 2025 Keh Website. All rights reserved. <a href="pp.html"><strong>Privacy Policy</strong></a></p>
       </div>
     </footer>
     
