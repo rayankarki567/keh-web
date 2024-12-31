@@ -1,4 +1,4 @@
-import GmailCallback from '../Components/GmailCallback';
+import GmailCallback from "../../Components/GmailCallback";
 
 const CallbackPage = () => {
   return <GmailCallback />;

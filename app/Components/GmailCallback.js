@@ -39,8 +39,7 @@ const GmailCallback = () => {
             const authResponse = user.getAuthResponse();
             const accessToken = authResponse.access_token;
 
-            // Constructing the message
-            const message = `From: ${data.name} <${data.email}>\nTo: rk@gmail.com\nSubject: ${data.subject}\n\n${data.message}`;
+            const message = `From: ${data.name} <${data.email}>\nTo: rayankarki567@gmail.com\nSubject: ${data.subject}\n\n${data.message}`;
             const encodedMessage = window.btoa(unescape(encodeURIComponent(message)))
               .replace(/\+/g, '-')
               .replace(/\//g, '_')
