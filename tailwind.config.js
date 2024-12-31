@@ -15,7 +15,7 @@ module.exports = {
         '138': '32rem',
       },
       fontFamily: {
-        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ['ui-sans-serif', ...defaultTheme.fontFamily.sans],
         serif: ['Martel', ...defaultTheme.fontFamily.serif], 
       },
       

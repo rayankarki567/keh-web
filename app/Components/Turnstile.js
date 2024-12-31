@@ -6,14 +6,8 @@ const Turnstile = ({ sitekey, theme = 'light', onChange }) => {
   const turnstileRef = useRef(null);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    script.onload = () => {
-      if (window.turnstile) {
+    const initializeTurnstile = () => {
+      if (turnstileRef.current && window.turnstile) {
         window.turnstile.render(turnstileRef.current, {
           sitekey,
           theme,
@@ -22,9 +16,16 @@ const Turnstile = ({ sitekey, theme = 'light', onChange }) => {
       }
     };
 
+    if (window.turnstile) {
+      initializeTurnstile();
+    } else {
+      window.addEventListener('load', initializeTurnstile);
+    }
+
     return () => {
-      if (script) {
-        document.body.removeChild(script);
+      if (window.turnstile && turnstileRef.current) {
+        window.turnstile.reset(turnstileRef.current);
+        window.turnstile.remove(turnstileRef.current);
       }
     };
   }, [sitekey, theme, onChange]);

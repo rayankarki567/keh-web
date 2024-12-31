@@ -13,10 +13,10 @@ const Navbar = () => {
           <Link href="/">
             <button className="rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">Home</button>
           </Link>
-          <Link href="../Drawings">
+          <Link href="../drawings">
             <button className="rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">Drawings</button>
           </Link>
-          <Link href="../SXC">
+          <Link href="../sxc">
             <button className="rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">SXC</button>
           </Link>
         </div>
