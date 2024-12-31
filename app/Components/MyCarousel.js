@@ -60,7 +60,7 @@ const MyCarousel = () => {
           <Image
             src={carouselItems[currentSlide].image}
             alt={carouselItems[currentSlide].title}
-            layout="fill"
+            fill
             className="object-cover"
           />
         </div>

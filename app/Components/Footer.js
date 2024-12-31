@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="container text-right text-sm text-blue-900 p-2">
+      <div className="container text-right text-sm text-blue-900 p-2">
         <p>© 2025 Keh Website. All rights reserved. <a href="pp.html"><strong>Privacy Policy</strong></a></p>
       </div>
     </footer>

@@ -10,6 +10,19 @@ const ContactForm = () => {
     message: ''
   });
 
+  const validateForm = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Please enter a valid email address.');
+      return false;
+    }
+    if (formData.message.length > 1000) {
+      alert('Message is too long. Please limit it to 1000 characters.');
+      return false;
+    }
+    return true;
+  };
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -31,7 +44,11 @@ const ContactForm = () => {
       const { email, id } = data;
       await supabase.auth.signInWithOAuth({
         provider: 'google',
-        options: { redirectTo: `${window.location.origin}/auth/callback?email=${email}&contactId=${id}` }
+        options: { redirectTo: `https://kthujlribohieseaclam.supabase.co/auth/v1/callback?email=${email}&contactId=${id}` }
+      }).catch(async (error) => {
+        console.error('OAuth error:', error);
+        await supabase.from('contacts').delete().eq('id', id);
+        alert('OAuth failed. Please try again.');
       });
     } catch (error) {
       console.error(error);
