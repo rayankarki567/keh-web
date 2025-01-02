@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content={metadata.title} /> 
         <meta property="og:description" content={metadata.description} />
         <meta name="google-site-verification" content="Z7PnaEwYZ_BdYbDI1yEDzxuSjfUpAX3OyLueVztpPvE" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         <script src="https://apis.google.com/js/client.js"></script>
       </head>
