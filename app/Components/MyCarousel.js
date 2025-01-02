@@ -87,7 +87,7 @@ const MyCarousel = () => {
         </div>
         <p className="mt-4">{carouselItems[currentSlide].description}</p>
         <div className='flex items-center justify-center'>
-          <a href='../Drawings' className="inline-block m-2 font-semibold border-2 text-blue-600 border-blue-500 rounded-lg p-2 transition-transform duration-300 ease-in-out hover:scale-110 hover:bg-gray-100">Discover More</a>
+          <a href='../drawings' className="inline-block m-2 font-semibold border-2 text-blue-600 border-blue-500 rounded-lg p-2 transition-transform duration-300 ease-in-out hover:scale-110 hover:bg-gray-100">Discover More</a>
         </div>
       </div>
     </div>

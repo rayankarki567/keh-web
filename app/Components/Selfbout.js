@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
-const SelfAbout = () => {
+const SelfAbout = ({ noMargin , nooMarg} ) => {
     const socialLinks = [
         { href: 'https://www.facebook.com/rayankarki123/', icon: FaFacebook },
         { href: 'https://www.instagram.com/mr_keh9/', icon: FaInstagram },
@@ -10,8 +10,8 @@ const SelfAbout = () => {
         { href: 'https://www.linkedin.com/in/rayankarki567/', icon: FaLinkedin},
       ];
   return (
-    <div className='container mx-auto mt-48 z-10'>
-      <div className='text-3xl font-serif h2after text-center mt-32 font-extrabold text-dblue'>About Me</div> 
+    <div className={`container mx-auto ${noMargin ? 'mt-0':'mt-48'} z-10`}>
+      <div className={`text-3xl font-serif h2after text-center ${nooMarg ? 'mt-8' : 'mt-32'} font-extrabold text-dblue`}>About Me</div> 
       <div className='text-lg text-center text-gray-400 m-2 font-light'>Just a Lazy Enthusiast!</div>
       
       <div className='flex justify-center mt-8'>

@@ -14,7 +14,7 @@ const Page = () => {
       <div className='container my-32'>
         <MyCarousel />
       </div>
-      <Selfbout />
+      <Selfbout noMargin={false} nooMarg={false}/>
       <ContactForm />
       <FeedbackForm />
       <FeedbackList />
