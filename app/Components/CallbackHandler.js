@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { supabase } from '../../lib/supabaseClient';
 
 const CallbackHandler = () => {
@@ -8,6 +8,8 @@ const CallbackHandler = () => {
 
   useEffect(() => {
     const handleCallback = async () => {
+      if (!router.isReady) return;
+
       const { data: { session }, error } = await supabase.auth.getSession();
 
       if (error || !session) {
@@ -23,7 +25,7 @@ const CallbackHandler = () => {
       if (!contactFormData) {
         console.error('No contact form data found');
         alert('Contact form data is missing. Please try again.');
-        router.push('/aboutme');
+        router.push('/contact');
         return;
       }
 
