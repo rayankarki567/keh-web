@@ -31,14 +31,16 @@ const ContactForm = () => {
 
     if (!validateForm()) return;
 
-    try {
-      await supabase.auth.signInWithOAuth({
+    localStorage.setItem('contactFormData', JSON.stringify(formData));
+
+    const {data, error}= await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `https://www.rayankarki.com.np/auth/callback?name=${encodeURIComponent(formData.name)}&subject=${encodeURIComponent(formData.subject)}&message=${encodeURIComponent(formData.message)}`
-        }
+          redirectTo: 'https://www.rayankarki.com.np/auth/callback',
+        },
       });
-    } catch (error) {
+    
+    if (error) {
       console.error('Error initiating OAuth:', error);
       alert('Failed to initiate OAuth. Please try again.');
     }
