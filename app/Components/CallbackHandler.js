@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
 import { useRouter } from 'next/navigation';
-import * as jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 
 const CallbackHandler = () => {
   const [status, setStatus] = useState('');
@@ -61,7 +61,7 @@ const CallbackHandler = () => {
       try {
         const { data, error } = await supabase
           .from('contacts')
-          .insert([{ name, subject, message, email }])
+          .insert([{ name, email, subject, message }])
           .select('*')
           .single();
 
