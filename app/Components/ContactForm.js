@@ -35,7 +35,7 @@ const ContactForm = () => {
       await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `http://localhost:3000/auth/callback?name=${encodeURIComponent(
+          redirectTo: `https://www.rayankarki.com.np//auth/callback?name=${encodeURIComponent(
             formData.name
           )}&subject=${encodeURIComponent(formData.subject)}&message=${encodeURIComponent(formData.message)}`
         }
