@@ -14,7 +14,7 @@ const CallbackHandler = () => {
     const subject = queryParams.get('subject');
     const message = queryParams.get('message');
 
-    console.log('Query parameters:', { name, subject, message });
+    console.log('Query parm:', { name, subject, message });
 
     const handleCredentialResponse = async (response) => {
       console.log('Received response:', response);
@@ -24,10 +24,8 @@ const CallbackHandler = () => {
         return;
       }
 
-      const { credential } = response;
-
       try {
-        const user = jwt_decode(credential);
+        const user = jwt_decode(response.credential);
         const email = user.email;
 
         console.log('Decoded user:', user);
@@ -40,45 +38,39 @@ const CallbackHandler = () => {
       }
     };
 
-      const insertIntoSupabase = async (name, subject, message, email) => {
-        try {
-          const { error } = await supabase
-            .from('contacts')
-            .insert({ name, email, subject, message });
-      
-          if (error) {
-            console.error('Error inserting data:', error.message);
-            setStatus('Failed to save your contact info.');
-            return;
-          }
-      
-          console.log('Data inserted successfully');
-          setStatus('Your message has been successfully sent!');
-          setTimeout(() => {
-            router.push('/');
-          }, 2000);
-        } catch (error) {
-          console.error('Unexpected error:', error);
-          setStatus('An error occurred while processing your request.');
-        }
-      };
+    const insertIntoSupabase = async (name, subject, message, email) => {
+      try {
+        const { error } = await supabase
+          .from('contacts')
+          .insert({ name, email, subject, message });
 
-    const loadGisScript = () => {
-      const script = document.createElement('script');
-      script.src = 'https://accounts.google.com/gsi/client';
-      script.async = true;
-      script.defer = true;
-      script.onload = () => {
-        window.google.accounts.id.initialize({
-          client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-          callback: handleCredentialResponse,
-        });
-        window.google.accounts.id.prompt();
-      };
-      document.body.appendChild(script);
+        if (error) {
+          console.error('Error inserting data:', error.message);
+          setStatus('Failed to save your contact info.');
+          return;
+        }
+
+        console.log('Data inserted successfully');
+        setStatus('Your message has been successfully sent!');
+        setTimeout(() => {
+          router.push('/');
+        }, 2000);
+      } catch (error) {
+        console.error('Unexpected error:', error);
+        setStatus('An error occurred while processing your request.');
+      }
     };
 
-    loadGisScript();
+    try {
+      window.google.accounts.id.initialize({
+        client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+        callback: handleCredentialResponse,
+      });
+      window.google.accounts.id.prompt();
+    } catch (error) {
+      console.error('Error initializing Google Identity Services:', error);
+      setStatus('Error initializing Google Identity Services.');
+    }
   }, [router]);
 
   return (
