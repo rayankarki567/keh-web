@@ -1,10 +1,7 @@
-import dynamic from 'next/dynamic';
-
-// Dynamically import GmailCallback component with ssr: false to disable SSR for this component
-const GmailCallback = dynamic(() => import('../../Components/GmailCallback'), { ssr: false });
+import CallbackHandler from '../../Components/CallbackHandler';
 
 const CallbackPage = () => {
-  return <GmailCallback />;
+  return <CallbackHandler />;
 };
 
 export default CallbackPage;

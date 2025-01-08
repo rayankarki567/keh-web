@@ -5,24 +5,22 @@ import { supabase } from '../../lib/supabaseClient';
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     subject: '',
     message: ''
   });
 
   const validateForm = () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      alert('Please enter a valid email address.');
+    if (formData.message.length > 1000) {
+      alert('Message is too long. Limit: 1000 characters.');
       return false;
     }
-    if (formData.message.length > 1000) {
-      alert('Message is too long. Please limit it to 1000 characters.');
+    if (!formData.name || !formData.subject || !formData.message) {
+      alert('All fields are required.');
       return false;
     }
     return true;
   };
-  
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -31,28 +29,20 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!validateForm()) return;
+
     try {
-
-      const { data, error } = await supabase.from('contacts').insert({ ...formData }).select('*').single();
-
-      if (error) {
-        console.error('Error storing:', error);
-        alert('Failed to store data.');
-        return;
-      }
-
-      const { email, id } = data;
       await supabase.auth.signInWithOAuth({
         provider: 'google',
-        options: { redirectTo: `https://kthujlribohieseaclam.supabase.co/auth/v1/callback?email=${email}&contactId=${id}` }
-      }).catch(async (error) => {
-        console.error('OAuth error:', error);
-        await supabase.from('contacts').delete().eq('id', id);
-        alert('OAuth failed. Please try again.');
+        options: {
+          redirectTo: `http://localhost:3000/auth/callback?name=${encodeURIComponent(
+            formData.name
+          )}&subject=${encodeURIComponent(formData.subject)}&message=${encodeURIComponent(formData.message)}`
+        }
       });
     } catch (error) {
-      console.error(error);
-      alert('Failed. Please try again.');
+      console.error('Error initiating OAuth:', error);
+      alert('Failed to initiate OAuth. Please try again.');
     }
   };
 
@@ -74,17 +64,6 @@ const ContactForm = () => {
           </div>
           <div className="mb-4">
             <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dblue"
-              placeholder="Email"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <input
               type="text"
               name="subject"
               value={formData.subject}
@@ -99,21 +78,21 @@ const ContactForm = () => {
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dblue"
-              rows="3"
+              className="w-full p-2 resize-none border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dblue"
+              rows="4"
               placeholder="Enter your message"
               required
             ></textarea>
           </div>
           <div className='text-center items-center'>
-            <button type="submit" className="submit-btn w-4/5 bg-dblue text-white p-2 rounded-md transition-transform duration-300 ease-in-out hover:scale-110">
+            <button type="submit" className="w-4/5 bg-dblue text-white p-2 rounded-md duration-300 ease-in-out hover:scale-110 transition-transform">
               Send Message
             </button>
           </div>
         </form>
         <div className="mt-4 text-center">
-          <div className="text-dblue text-lg font-bold">Do You Know?</div>
-          <div className="text-gray-400">In average, 25% of received emails are only responded to every day.</div>
+          <div className="text-dblue text-lg font-bold">Did You Know?</div>
+          <div className="text-gray-400">On average, 25% of received emails are only responded to each day.</div>
         </div>
       </div>
     </>
