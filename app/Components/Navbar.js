@@ -16,6 +16,9 @@ const Navbar = () => {
           <Link href="../drawings">
             <button className="rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">Drawings</button>
           </Link>
+          <Link href="https://chat.rayankarki.com.np/">
+            <button className="rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">Chat</button>
+          </Link>
           <Link href="../sxc">
             <button className="rounded-xl px-2 py-1 transition duration-500 ease-in hover:bg-white hover:text-dblue">SXC</button>
           </Link>
