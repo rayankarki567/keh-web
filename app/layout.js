@@ -6,6 +6,12 @@ export const metadata = {
   description: "Welcome to Keh Website. It's just a simple portfolio (By Rayan Karki)",
 };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Keh Website",
+    "url": "https://www.rayankarki.com.np"
+  };
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -28,12 +34,6 @@ export default function RootLayout({ children }) {
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-        const jsonLd = {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Keh Website",
-          "url": "https://www.rayankarki.com.np"
-        };
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) />
 
       </head>
