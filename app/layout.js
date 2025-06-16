@@ -20,6 +20,13 @@ export const metadata = {
       "https://www.linkedin.com/in/rayankarki567/",
       "https://www.instagram.com/mr_keh9/"
     ],
+    "description": "Rayan Karki is a tech enthusiast and a creative explorer.",
+    "jobTitle": "Student",
+    "studentOf": {
+      "@type": "College",
+      "name": "St. Xavier's College"
+    },
+  }
   };
 export default function RootLayout({ children }) {
   return (
