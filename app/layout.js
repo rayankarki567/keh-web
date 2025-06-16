@@ -11,6 +11,15 @@ export const metadata = {
     "@type": "WebSite",
     "name": "Keh Website",
     "url": "https://www.rayankarki.com.np"
+    "author": {
+    "@type": "Person",
+    "name": "Rayan Karki",
+    "url": "https://www.rayankarki.com.np/aboutme",
+    "sameAs": [
+      "https://github.com/rayankarki567/",
+      "https://www.linkedin.com/in/rayankarki567/",
+      "https://www.instagram.com/mr_keh9/"
+    ],
   };
 export default function RootLayout({ children }) {
   return (
