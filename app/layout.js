@@ -6,12 +6,15 @@ export const metadata = {
   description: "Welcome to Keh Website. It's just a simple portfolio (By Rayan Karki)",
 };
 
-  const jsonLd = {
+const jsonLd = [
+  {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Keh Website",
     "url": "https://www.rayankarki.com.np"
-    "author": {
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "Person",
     "name": "Rayan Karki",
     "url": "https://www.rayankarki.com.np/aboutme",
@@ -20,14 +23,15 @@ export const metadata = {
       "https://www.linkedin.com/in/rayankarki567/",
       "https://www.instagram.com/mr_keh9/"
     ],
-    "description": "Rayan Karki is a tech enthusiast and a creative explorer.",
+    "description": "Rayan Karki is a tech enthusiast and creative explorer from Nepal.",
     "jobTitle": "Student",
-    "studentOf": {
-      "@type": "College",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
       "name": "St. Xavier's College"
-    },
+    }
   }
-  };
+];
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
