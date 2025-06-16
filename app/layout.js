@@ -27,6 +27,15 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+        const jsonLd = {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Keh Website",
+          "url": "https://www.rayankarki.com.np"
+        };
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) />
+
       </head>
       <body>
         <Navbar />
