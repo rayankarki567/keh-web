@@ -23,7 +23,7 @@ const SemestersPage = () => {
     { title: "III", link: "https://drive.google.com/drive/folders/1Jg9Amrzld7tXg4vd5Z9PAvULetCBUSPU?usp=sharing" },
     { title: "IV", link: "https://drive.google.com/drive/folders/1iE9Mrf-jO3VTxNTPAWvUhcYp726RA9lW?usp=sharing" },
     { title: "V", link: "https://drive.google.com/drive/folders/185oLMWNuCzZcEyaOs30LKY7BmCxcHPvI?usp=sharing" },
-    { title: "VI", link: "https://drive.google.com/drive/folders/1pVmshUkql8mW29Y2CMb3DDNQ9Dd4L3Oe?usp=sharing" }
+    { title: "VI", link: "https://drive.google.com/drive/folders/1CFohxRCcLGOiT-gpzfIhnpWcv2ZU6khS?usp=sharing" },
   ];
 
   const [isClient, setIsClient] = useState(false);
