@@ -176,6 +176,19 @@ export default function RootLayout({ children }) {
         {/* External scripts */}
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
+        
+        {/* Google Analytics */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+            `,
+          }}
+        />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
