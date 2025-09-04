@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.rayankarki.com.np/sitemap.xml
+
+# Block login/signup pages from search engines
+Disallow: /login
+Disallow: /signup
+Disallow: /auth/
